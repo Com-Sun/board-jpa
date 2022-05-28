@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import lombok.Data;
 
 @Data
-public class ResidentDTO {
+public class ResidentRequestDTO {
     Long serialNumber;
     String name;
     String registrationNumber;
