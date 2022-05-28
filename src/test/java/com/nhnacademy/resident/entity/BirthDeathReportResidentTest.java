@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.nhnacademy.resident.config.RootConfig;
 import com.nhnacademy.resident.config.WebConfig;
-import java.time.LocalDateTime;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,25 +23,16 @@ import org.springframework.transaction.annotation.Transactional;
     @ContextConfiguration(classes = RootConfig.class),
     @ContextConfiguration(classes = WebConfig.class)
 })
-class ResidentEntityTest {
+class BirthDeathReportResidentTest {
     @PersistenceContext
-    private EntityManager entityManager;
+    EntityManager entityManager;
 
     @Test
-    public void residentEntityTest(){
-        Resident resident = entityManager.find(Resident.class, 1L);
-        assertThat(resident.getResidentSerialNumber().longValue()).isEqualTo(1L);
-
-        Resident hyunjin = Resident.builder()
-            .name("현진")
-            .residentSerialNumber(2L)
-            .residentRegistrationNumber("12321321")
-            .genderCode("남")
-            .birthDate(LocalDateTime.now())
-            .birthPlaceCode("어딘가")
-            .registrationBaseAddress("경기도 어쩌구")
-            .build();
-
-        assertThat(hyunjin.getName()).isEqualTo("현진");
+    @DisplayName("기준이의 기석이 출생신고 테스트")
+    void birthReportResidentTest() {
+        BirthDeathReportResident.Pk pk = new BirthDeathReportResident.Pk("출생", 4L, entityManager.find(Resident.class, 7L));
+        assertThat(pk.getResident().getName()).isEqualTo("남기석");
+        assertThat(pk.getReportResidentSerialNumber()).isEqualTo(4L);
     }
+
 }

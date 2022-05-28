@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.nhnacademy.resident.config.RootConfig;
 import com.nhnacademy.resident.config.WebConfig;
-import java.time.LocalDateTime;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.junit.jupiter.api.Test;
@@ -23,25 +22,14 @@ import org.springframework.transaction.annotation.Transactional;
     @ContextConfiguration(classes = RootConfig.class),
     @ContextConfiguration(classes = WebConfig.class)
 })
-class ResidentEntityTest {
+class CertificateIssueTest {
     @PersistenceContext
-    private EntityManager entityManager;
+    EntityManager entityManager;
 
     @Test
-    public void residentEntityTest(){
-        Resident resident = entityManager.find(Resident.class, 1L);
-        assertThat(resident.getResidentSerialNumber().longValue()).isEqualTo(1L);
-
-        Resident hyunjin = Resident.builder()
-            .name("현진")
-            .residentSerialNumber(2L)
-            .residentRegistrationNumber("12321321")
-            .genderCode("남")
-            .birthDate(LocalDateTime.now())
-            .birthPlaceCode("어딘가")
-            .registrationBaseAddress("경기도 어쩌구")
-            .build();
-
-        assertThat(hyunjin.getName()).isEqualTo("현진");
+    void certificateIssueFkTest() {
+        CertificateIssue certificateIssue = entityManager.find(CertificateIssue.class, 1234567891011121L);
+        assertThat(certificateIssue.getResident().getName()).isEqualTo("남기준");
     }
+
 }

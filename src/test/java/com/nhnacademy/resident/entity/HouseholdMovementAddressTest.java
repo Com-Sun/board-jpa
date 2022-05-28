@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.nhnacademy.resident.config.RootConfig;
 import com.nhnacademy.resident.config.WebConfig;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.junit.jupiter.api.Test;
@@ -23,25 +23,13 @@ import org.springframework.transaction.annotation.Transactional;
     @ContextConfiguration(classes = RootConfig.class),
     @ContextConfiguration(classes = WebConfig.class)
 })
-class ResidentEntityTest {
+class HouseholdMovementAddressTest {
     @PersistenceContext
-    private EntityManager entityManager;
+    EntityManager entityManager;
 
     @Test
-    public void residentEntityTest(){
-        Resident resident = entityManager.find(Resident.class, 1L);
-        assertThat(resident.getResidentSerialNumber().longValue()).isEqualTo(1L);
-
-        Resident hyunjin = Resident.builder()
-            .name("현진")
-            .residentSerialNumber(2L)
-            .residentRegistrationNumber("12321321")
-            .genderCode("남")
-            .birthDate(LocalDateTime.now())
-            .birthPlaceCode("어딘가")
-            .registrationBaseAddress("경기도 어쩌구")
-            .build();
-
-        assertThat(hyunjin.getName()).isEqualTo("현진");
+    void getPkTest() {
+        HouseholdMovementAddress.Pk pk = new HouseholdMovementAddress.Pk(LocalDate.of(2007,10,31), entityManager.find(Household.class, 1L));
+        assertThat(entityManager.find(HouseholdMovementAddress.class, pk).getHouseMovementAddress()).isEqualTo("서울시 동작구 상도로 940번길");
     }
 }

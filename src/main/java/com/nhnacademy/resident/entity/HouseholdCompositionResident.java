@@ -48,6 +48,8 @@ public class HouseholdCompositionResident {
     @EqualsAndHashCode
     @AllArgsConstructor
     @Embeddable
+    @Getter
+    @Setter
     public static class Pk implements Serializable {
         @ManyToOne
         @JoinColumn(name = "household_serial_number")
