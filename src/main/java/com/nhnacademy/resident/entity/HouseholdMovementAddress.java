@@ -25,10 +25,10 @@ public class HouseholdMovementAddress {
     @EmbeddedId
     private Pk pk;
 
-    @Column
+    @Column (name = "house_movement_address")
     private String houseMovementAddress;
 
-    @Column
+    @Column (name = "last_address_yn")
     private String lastAddressYn;
 
     @Builder(builderClassName = "HouseholdMovementAddressBuilder")
@@ -42,6 +42,8 @@ public class HouseholdMovementAddress {
     @EqualsAndHashCode
     @AllArgsConstructor
     @Embeddable
+    @Getter
+    @Setter
     public static class Pk implements Serializable {
         @Column(name = "house_movement_report_date")
         private LocalDate localDate;

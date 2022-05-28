@@ -19,7 +19,7 @@ import lombok.Setter;
 @Entity
 public class Resident {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "resident_serial_number")
     private Long residentSerialNumber;
 
     @Column(name = "name")

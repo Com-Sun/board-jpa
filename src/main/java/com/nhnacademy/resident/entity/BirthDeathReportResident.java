@@ -51,6 +51,8 @@ public class BirthDeathReportResident {
     @AllArgsConstructor
     @EqualsAndHashCode
     @Embeddable
+    @Getter
+    @Setter
     public static class Pk implements Serializable {
         @Column(name = "birth_death_type_code")
         private String birthDeathTypeCode;

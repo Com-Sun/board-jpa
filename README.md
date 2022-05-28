@@ -1,4 +1,25 @@
+# 학습 목표
+
+지금까지 Spring MVC를 이용하여 게시판을 만들어 보았다. 이번에 학습 할 목표는 다음과 같다.
+
+- View name을 반환했던 Controller를 RestController로 변환
+  - RestController란, @Controller에 @ResponseBody가 추가된 것이다. - Json형태의 객체 데이터 반환
+- ORM 이해하기
+  - `객체지향`언어인 JAVA와, `관계형` DB인 SQL문의 불일치를 중간에서 맵핑해주는 기술
+  - 그 기술의 표준 명세인 JPA와
+  - JPA의 실제 구현인 Hibernate
+- 들을 통해 객체 중심적인 개발을 하여 게시판을 만들어 보자.
+
+## 사용한 기술
+
+- Spring Framework
+- Spring Data JPA
+- Spring MVC
+- JUnit5 + Mockito + AssertJ
+
 ![](./img/erd.png)
+
+---
 
 # data access layer 구현 - JPA 이용
 
