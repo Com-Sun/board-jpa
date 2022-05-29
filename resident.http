@@ -1,0 +1,13 @@
+POST /residents HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "serialNumber": "4",
+  "name": "남기준",
+  "registrationNumber": "790510-1234564",
+  "gender": "남",
+  "birthDate": "1979-05-10 20:45:00",
+  "birthPlace": "병원",
+  "baseAddress": "경기도 성남시 분당구 대왕판교로645번길"
+}
