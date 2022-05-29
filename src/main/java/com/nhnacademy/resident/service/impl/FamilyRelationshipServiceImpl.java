@@ -3,9 +3,11 @@ package com.nhnacademy.resident.service.impl;
 import com.nhnacademy.resident.domain.FamilyRelationshipRequestDTO;
 import com.nhnacademy.resident.entity.FamilyRelationship;
 import com.nhnacademy.resident.entity.Resident;
-import com.nhnacademy.resident.repository.FamilyRelationshipRepository;
+import com.nhnacademy.resident.repository.familyrelationship.FamilyRelationshipRepository;
 import com.nhnacademy.resident.repository.ResidentRepository;
+import com.nhnacademy.resident.repository.familyrelationship.FamilyRelationshipRepositoryImpl;
 import com.nhnacademy.resident.service.FamilyRelationshipService;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,5 +31,9 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
             .pk(new FamilyRelationship.Pk(familyRelationshipRequestDTO.getFamilySerialNumber(), residentRepository.findById(serialNumber).get()))
             .familyRelationshipCode(familyRelationshipRequestDTO.getRelationShip())
             .build());
+    }
+
+    public List<Resident> getFamilyRelationshipList(Long serialNumber) {
+        return familyRelationshipRepository.getResidentsHavingResidentSerialNumber(serialNumber);
     }
 }

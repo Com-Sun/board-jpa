@@ -23,13 +23,11 @@
     <tbody>
     <tr th:each="resident : ${residents}">
         <td th:text="${resident.name}"></td>
-        <td th:text="${resident.genderCode}"></td>
+        <td th:onclick="'location.href=\''+ @{|residents/${resident.residentSerialNumber}/relationship|}+ '\''">가족관계증명서</td>
         <td th:text="${resident.birthDate}"></td>
     </tr>
     </tbody>
 
 </table>
-
-<span th:each="resident : ${residents}"></span>
 </body>
 </html>
