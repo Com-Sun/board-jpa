@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>주민목록</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>이름</th>
+        <th>가족관계증명서</th>
+        <th>주민등록등본</th>
+        <th>출생신고서</th>
+        <th>사망신고서</th>
+        <th>증명서 발급 목록</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="resident : ${residents}">
+        <td th:text="${resident.name}"></td>
+        <td th:text="${resident.genderCode}"></td>
+        <td th:text="${resident.birthDate}"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+<span th:each="resident : ${residents}"></span>
+</body>
+</html>

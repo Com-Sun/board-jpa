@@ -1,4 +1,4 @@
-package com.nhnacademy.resident.config;
+package com.nhnacademy.resident.controller;
 
 import com.nhnacademy.resident.domain.ApiError;
 import lombok.extern.slf4j.Slf4j;

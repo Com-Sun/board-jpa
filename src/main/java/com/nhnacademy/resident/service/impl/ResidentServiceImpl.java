@@ -4,6 +4,7 @@ import com.nhnacademy.resident.domain.ResidentRequestDTO;
 import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import com.nhnacademy.resident.service.ResidentService;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,4 +42,11 @@ public class ResidentServiceImpl implements ResidentService {
     public Resident modifyResident(Resident resident) {
         return residentRepository.save(resident);
     }
+
+    @Override
+    public List<Resident> getResidentList() {
+        return residentRepository.findAll();
+    }
+
+
 }

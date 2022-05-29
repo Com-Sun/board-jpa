@@ -1,4 +1,4 @@
-package com.nhnacademy.resident.controller;
+package com.nhnacademy.resident.controller.restcontroller;
 
 import com.nhnacademy.resident.domain.ResidentRequestDTO;
 import com.nhnacademy.resident.entity.Resident;
