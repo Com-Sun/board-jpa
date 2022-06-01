@@ -12,4 +12,6 @@ public interface ResidentService {
     Resident modifyResident(Resident resident);
 
     List<Resident> getResidentList();
+
+    Resident getResidentBySerialNumber(Long serialNumber);
 }

@@ -8,6 +8,6 @@ import java.util.List;
 public interface FamilyRelationshipService {
     FamilyRelationship createFamilyRelationship(FamilyRelationshipRequestDTO familyRelationshipRequestDTO, Long serialNumber);
 
-    List<Resident> getFamilyRelationshipList(Long serialNumber);
+    List<FamilyRelationship> getFamilyRelationshipList(Long serialNumber);
 
 }

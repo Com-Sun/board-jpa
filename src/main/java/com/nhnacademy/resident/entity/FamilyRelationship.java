@@ -48,4 +48,5 @@ public class FamilyRelationship {
         @JoinColumn(name = "base_resident_serial_number")
         private Resident resident;
     }
+
 }

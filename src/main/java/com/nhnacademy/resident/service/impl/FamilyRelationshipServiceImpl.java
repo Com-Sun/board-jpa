@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class FamilyRelationshipServiceImpl implements FamilyRelationshipService {
-
     private final FamilyRelationshipRepository familyRelationshipRepository;
     private final ResidentRepository residentRepository;
 
@@ -33,7 +32,7 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
             .build());
     }
 
-    public List<Resident> getFamilyRelationshipList(Long serialNumber) {
+    public List<FamilyRelationship> getFamilyRelationshipList(Long serialNumber) {
         return familyRelationshipRepository.getResidentsHavingResidentSerialNumber(serialNumber);
     }
 }

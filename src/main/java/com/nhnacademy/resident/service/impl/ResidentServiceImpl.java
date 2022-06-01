@@ -48,5 +48,10 @@ public class ResidentServiceImpl implements ResidentService {
         return residentRepository.findAll();
     }
 
+    @Override
+    public Resident getResidentBySerialNumber(Long serialNumber) {
+        return residentRepository.findById(serialNumber).get();
+    }
+
 
 }
