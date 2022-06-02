@@ -1,6 +1,6 @@
 package com.nhnacademy.resident.service.impl;
 
-import com.nhnacademy.resident.domain.ResidentRequestDTO;
+import com.nhnacademy.resident.domain.dto.ResidentRequest;
 import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import com.nhnacademy.resident.service.ResidentService;
@@ -18,16 +18,16 @@ public class ResidentServiceImpl implements ResidentService {
 
     @Transactional
     @Override
-    public Resident createResident(ResidentRequestDTO residentRequestDTO) {
+    public Resident createResident(ResidentRequest residentRequest) {
 
         return residentRepository.save(Resident.builder()
-            .residentSerialNumber(residentRequestDTO.getSerialNumber())
-            .name(residentRequestDTO.getName())
-            .residentRegistrationNumber(residentRequestDTO.getRegistrationNumber())
-            .genderCode(residentRequestDTO.getGender())
-            .birthDate(residentRequestDTO.getBirthDate())
-            .birthPlaceCode(residentRequestDTO.getBirthPlace())
-            .registrationBaseAddress(residentRequestDTO.getBaseAddress())
+            .residentSerialNumber(residentRequest.getSerialNumber())
+            .name(residentRequest.getName())
+            .residentRegistrationNumber(residentRequest.getRegistrationNumber())
+            .genderCode(residentRequest.getGender())
+            .birthDate(residentRequest.getBirthDate())
+            .birthPlaceCode(residentRequest.getBirthPlace())
+            .registrationBaseAddress(residentRequest.getBaseAddress())
             .build());
     }
 

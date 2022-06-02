@@ -22,7 +22,7 @@ public class QCertificateIssue extends EntityPathBase<CertificateIssue> {
 
     public static final QCertificateIssue certificateIssue = new QCertificateIssue("certificateIssue");
 
-    public final NumberPath<Long> certificateConfirmationNumber = createNumber("certificateConfirmationNumber", Long.class);
+    public final StringPath certificateConfirmationNumber = createString("certificateConfirmationNumber");
 
     public final DatePath<java.time.LocalDate> certificateIssueDate = createDate("certificateIssueDate", java.time.LocalDate.class);
 

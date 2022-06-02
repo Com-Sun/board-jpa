@@ -3,7 +3,6 @@ package com.nhnacademy.resident.repository.familyrelationship;
 import com.nhnacademy.resident.entity.FamilyRelationship;
 import com.nhnacademy.resident.entity.QFamilyRelationship;
 import com.nhnacademy.resident.entity.QResident;
-import com.nhnacademy.resident.entity.Resident;
 import java.util.List;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
