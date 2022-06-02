@@ -13,20 +13,21 @@
     <thead>
     <tr>
         <th>이름</th>
-        <th>성별</th>
-        <th>생년월일</th>
+        <th>가족관계증명서</th>
+        <th>주민등록등본</th>
+        <th>출생신고서</th>
+        <th>사망신고서</th>
+        <th>증명서 발급 목록</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="resident : ${residents}">
-        <td th:text="${resident.name}">좀..</td>
-        <td th:text="${resident.genderCode}"></td>
+        <td th:text="${resident.name}"></td>
+        <td th:onclick="'location.href=\''+ @{|residents/${resident.residentSerialNumber}/relationship|}+ '\''" style="color: blue">가족관계증명서</td>
         <td th:text="${resident.birthDate}"></td>
     </tr>
     </tbody>
 
 </table>
-
-<span th:each="resident : ${residents}"></span>
 </body>
 </html>

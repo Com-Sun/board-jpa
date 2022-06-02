@@ -6,3 +6,19 @@ Content-Type: application/json
     "familySerialNumber": 5,
     "relationShip": "배우자"
 }
+
+###
+
+GET /residents/4/relationship HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+###
+
+PUT /residents/4/relationship/5
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "familyRelationshipCode": "빵꾸똥꾸"
+}

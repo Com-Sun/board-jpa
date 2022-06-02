@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -48,4 +47,5 @@ public class FamilyRelationship {
         @JoinColumn(name = "base_resident_serial_number")
         private Resident resident;
     }
+
 }

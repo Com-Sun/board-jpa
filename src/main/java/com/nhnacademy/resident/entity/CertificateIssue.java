@@ -20,7 +20,7 @@ import lombok.Setter;
 public class CertificateIssue {
     @Id
     @Column(name = "certificate_confirmation_number")
-    private Long certificateConfirmationNumber;
+    private String certificateConfirmationNumber;
 
     @ManyToOne
     @JoinColumn(name = "resident_serial_number")
@@ -33,7 +33,7 @@ public class CertificateIssue {
     private LocalDate certificateIssueDate;
 
     @Builder(builderClassName = "CertificateIssueBuilder")
-    private CertificateIssue(Long certificateConfirmationNumber, Resident resident,
+    private CertificateIssue(String certificateConfirmationNumber, Resident resident,
                              String certificateTypeCode, LocalDate certificateIssueDate) {
         this.certificateConfirmationNumber = certificateConfirmationNumber;
         this.resident = resident;
