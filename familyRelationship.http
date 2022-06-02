@@ -22,3 +22,9 @@ Content-Type: application/json
 {
   "familyRelationshipCode": "빵꾸똥꾸"
 }
+
+###
+
+DELETE /residents/4/relationship/3
+Host: localhost:8080
+Content-Type: application/json

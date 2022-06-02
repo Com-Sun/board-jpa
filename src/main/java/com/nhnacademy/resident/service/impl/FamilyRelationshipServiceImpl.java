@@ -38,11 +38,11 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
     }
 
     @Override
-    public FamilyRelationship getFamilyRelationshipBySerialNum(Long serialNum, Long baseNum) {
+    public FamilyRelationship getFamilyRelationshipBySerialNum(Long serialNum, Long familySerialNum) {
         List<FamilyRelationship> relationships =  familyRelationshipRepository.getResidentsHavingResidentSerialNumber(serialNum);
 
         return relationships.stream()
-            .filter(x -> x.getPk().getResident().getResidentSerialNumber().equals(baseNum))
+            .filter(x -> x.getPk().getFamilyResidentSerialNumber().equals(familySerialNum))
             .collect(Collectors.toList()).get(0);
     }
 
@@ -54,4 +54,12 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
         familyRelationship.setFamilyRelationshipCode(request.getFamilyRelationshipCode());
         return familyRelationshipRepository.save(familyRelationship);
     }
+
+    @Transactional
+    @Override
+    public FamilyRelationship deleteRelationship(Long serialNumber, Long familySerialNumber) {
+        FamilyRelationship.Pk pk = getFamilyRelationshipBySerialNum(serialNumber, familySerialNumber).getPk();
+        return familyRelationshipRepository.deleteByPk(pk);
+    }
+
 }

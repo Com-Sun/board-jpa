@@ -14,14 +14,17 @@ public class FamilyRelationshipRepositoryImpl extends QuerydslRepositorySupport 
     }
 
     @Override
-    public List<FamilyRelationship> getResidentsHavingResidentSerialNumber(Long residentSerialNumber) {
+    public List<FamilyRelationship> getResidentsHavingResidentSerialNumber(
+        Long residentSerialNumber) {
         QResident resident = QResident.resident;
         QFamilyRelationship familyRelationship = QFamilyRelationship.familyRelationship;
 
-        List<FamilyRelationship> residentList = from(familyRelationship)
+
+        List<FamilyRelationship> residentList =
+            from(familyRelationship)
             .innerJoin(resident)
-            .on(familyRelationship.pk.resident.eq(resident)
-                .and(familyRelationship.pk.familyResidentSerialNumber.eq(residentSerialNumber)))
+            .on(familyRelationship.pk.familyResidentSerialNumber.eq(resident.residentSerialNumber)
+                .and(familyRelationship.pk.resident.residentSerialNumber.eq(residentSerialNumber)))
             .orderBy(familyRelationship.familyRelationshipCode.desc())
             .fetch();
 

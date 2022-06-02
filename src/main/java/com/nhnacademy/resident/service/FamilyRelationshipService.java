@@ -14,4 +14,5 @@ public interface FamilyRelationshipService {
 
     FamilyRelationship modifyRelationship(ModifyFamilyRelationshipRequest request, Long serialNumber, Long familySerialNumber);
 
+    FamilyRelationship deleteRelationship(Long serialNumber, Long FamilySerialNumber);
 }
