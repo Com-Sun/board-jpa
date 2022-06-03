@@ -1,7 +1,8 @@
 package com.nhnacademy.resident.service.impl;
 
-import com.nhnacademy.resident.domain.dto.FamilyRelationshipRequest;
-import com.nhnacademy.resident.domain.dto.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.FamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.response.FamilyRelationshipResidentResponse;
 import com.nhnacademy.resident.entity.FamilyRelationship;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import com.nhnacademy.resident.repository.familyrelationship.FamilyRelationshipRepository;
@@ -60,6 +61,11 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
     public FamilyRelationship deleteRelationship(Long serialNumber, Long familySerialNumber) {
         FamilyRelationship.Pk pk = getFamilyRelationshipBySerialNum(serialNumber, familySerialNumber).getPk();
         return familyRelationshipRepository.deleteByPk(pk);
+    }
+
+    @Override
+    public List<FamilyRelationshipResidentResponse> getFamilyRelationshipList2(Long serialNumber) {
+        return familyRelationshipRepository.getRelationshipResidentResponsesHavingResidentSerialNumber(serialNumber);
     }
 
 }

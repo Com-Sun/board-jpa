@@ -1,7 +1,7 @@
 package com.nhnacademy.resident.controller.restcontroller;
 
-import com.nhnacademy.resident.domain.dto.ResidentModifyRequest;
-import com.nhnacademy.resident.domain.dto.ResidentRequest;
+import com.nhnacademy.resident.domain.dto.request.ResidentModifyRequest;
+import com.nhnacademy.resident.domain.dto.request.ResidentRequest;
 import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.service.ResidentService;
 import org.springframework.http.HttpStatus;

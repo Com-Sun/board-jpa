@@ -1,7 +1,7 @@
 package com.nhnacademy.resident.controller.restcontroller;
 
-import com.nhnacademy.resident.domain.dto.FamilyRelationshipRequest;
-import com.nhnacademy.resident.domain.dto.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.FamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.ModifyFamilyRelationshipRequest;
 import com.nhnacademy.resident.entity.FamilyRelationship;
 import com.nhnacademy.resident.service.FamilyRelationshipService;
 import com.nhnacademy.resident.service.ResidentService;

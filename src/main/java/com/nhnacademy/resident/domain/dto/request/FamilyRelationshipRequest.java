@@ -1,4 +1,4 @@
-package com.nhnacademy.resident.domain.dto;
+package com.nhnacademy.resident.domain.dto.request;
 
 import lombok.Data;
 

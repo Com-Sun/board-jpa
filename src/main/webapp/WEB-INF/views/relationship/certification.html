@@ -32,10 +32,10 @@
     <tbody>
     <tr th:each="resident : ${residents}">
         <td th:text="${resident.familyRelationshipCode}"></td>
-        <td th:text="${resident.pk.resident.name}"></td>
-        <td th:text="${resident.pk.resident.birthDate}"></td>
-        <td th:text="${resident.pk.resident.residentRegistrationNumber}"></td>
-        <td th:text="${resident.pk.resident.genderCode}"></td>
+        <td th:text="${resident.name}"></td>
+        <td th:text="${resident.birthDate}"></td>
+        <td th:text="${resident.residentRegistrationNumber}"></td>
+        <td th:text="${resident.genderCode}"></td>
     </tr>
     </tbody>
 

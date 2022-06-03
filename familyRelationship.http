@@ -28,3 +28,10 @@ Content-Type: application/json
 DELETE /residents/4/relationship/3
 Host: localhost:8080
 Content-Type: application/json
+
+
+###
+
+GET /residents2/4/relationship HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
