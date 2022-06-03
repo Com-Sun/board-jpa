@@ -1,7 +1,8 @@
 package com.nhnacademy.resident.service.impl;
 
-import com.nhnacademy.resident.domain.dto.FamilyRelationshipRequest;
-import com.nhnacademy.resident.domain.dto.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.FamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.response.FamilyRelationshipResidentResponse;
 import com.nhnacademy.resident.entity.FamilyRelationship;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import com.nhnacademy.resident.repository.familyrelationship.FamilyRelationshipRepository;
@@ -38,11 +39,11 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
     }
 
     @Override
-    public FamilyRelationship getFamilyRelationshipBySerialNum(Long serialNum, Long baseNum) {
+    public FamilyRelationship getFamilyRelationshipBySerialNum(Long serialNum, Long familySerialNum) {
         List<FamilyRelationship> relationships =  familyRelationshipRepository.getResidentsHavingResidentSerialNumber(serialNum);
 
         return relationships.stream()
-            .filter(x -> x.getPk().getResident().getResidentSerialNumber().equals(baseNum))
+            .filter(x -> x.getPk().getFamilyResidentSerialNumber().equals(familySerialNum))
             .collect(Collectors.toList()).get(0);
     }
 
@@ -54,4 +55,17 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
         familyRelationship.setFamilyRelationshipCode(request.getFamilyRelationshipCode());
         return familyRelationshipRepository.save(familyRelationship);
     }
+
+    @Transactional
+    @Override
+    public FamilyRelationship deleteRelationship(Long serialNumber, Long familySerialNumber) {
+        FamilyRelationship.Pk pk = getFamilyRelationshipBySerialNum(serialNumber, familySerialNumber).getPk();
+        return familyRelationshipRepository.deleteByPk(pk);
+    }
+
+    @Override
+    public List<FamilyRelationshipResidentResponse> getFamilyRelationshipList2(Long serialNumber) {
+        return familyRelationshipRepository.getRelationshipResidentResponsesHavingResidentSerialNumber(serialNumber);
+    }
+
 }

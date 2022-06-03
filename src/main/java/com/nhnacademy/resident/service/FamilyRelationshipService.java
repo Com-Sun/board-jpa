@@ -1,7 +1,8 @@
 package com.nhnacademy.resident.service;
 
-import com.nhnacademy.resident.domain.dto.FamilyRelationshipRequest;
-import com.nhnacademy.resident.domain.dto.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.FamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.response.FamilyRelationshipResidentResponse;
 import com.nhnacademy.resident.entity.FamilyRelationship;
 import java.util.List;
 
@@ -14,4 +15,7 @@ public interface FamilyRelationshipService {
 
     FamilyRelationship modifyRelationship(ModifyFamilyRelationshipRequest request, Long serialNumber, Long familySerialNumber);
 
+    FamilyRelationship deleteRelationship(Long serialNumber, Long FamilySerialNumber);
+
+    List<FamilyRelationshipResidentResponse> getFamilyRelationshipList2(Long serialNumber);
 }

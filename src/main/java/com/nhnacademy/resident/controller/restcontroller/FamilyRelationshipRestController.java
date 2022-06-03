@@ -1,11 +1,12 @@
 package com.nhnacademy.resident.controller.restcontroller;
 
-import com.nhnacademy.resident.domain.dto.FamilyRelationshipRequest;
-import com.nhnacademy.resident.domain.dto.ModifyFamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.FamilyRelationshipRequest;
+import com.nhnacademy.resident.domain.dto.request.ModifyFamilyRelationshipRequest;
 import com.nhnacademy.resident.entity.FamilyRelationship;
 import com.nhnacademy.resident.service.FamilyRelationshipService;
 import com.nhnacademy.resident.service.ResidentService;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -44,7 +45,12 @@ public class FamilyRelationshipRestController {
                                                     Long familySerialNumber) {
 
 
+        return familyRelationshipService.modifyRelationship(modifyRequest, serialNumber,
+            familySerialNumber);
+    }
 
-        return familyRelationshipService.modifyRelationship(modifyRequest, serialNumber, familySerialNumber);
+    @DeleteMapping(value = "/residents/{serialNumber}/relationship/{familySerialNumber}")
+    FamilyRelationship deleteFamilyRelationship(@PathVariable(name = "serialNumber") Long serialNumber, @PathVariable(name = "familySerialNumber") Long familySerialNumber) {
+        return familyRelationshipService.deleteRelationship(serialNumber, familySerialNumber);
     }
 }

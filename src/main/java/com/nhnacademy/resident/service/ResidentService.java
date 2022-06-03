@@ -1,6 +1,6 @@
 package com.nhnacademy.resident.service;
 
-import com.nhnacademy.resident.domain.dto.ResidentRequest;
+import com.nhnacademy.resident.domain.dto.request.ResidentRequest;
 import com.nhnacademy.resident.entity.Resident;
 import java.util.List;
 
