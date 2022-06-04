@@ -29,15 +29,21 @@ public class QResident extends EntityPathBase<Resident> {
 
     public final StringPath deathPlaceCode = createString("deathPlaceCode");
 
+    public final StringPath email = createString("email");
+
     public final StringPath genderCode = createString("genderCode");
 
     public final StringPath name = createString("name");
+
+    public final StringPath pwd = createString("pwd");
 
     public final StringPath registrationBaseAddress = createString("registrationBaseAddress");
 
     public final StringPath residentRegistrationNumber = createString("residentRegistrationNumber");
 
     public final NumberPath<Long> residentSerialNumber = createNumber("residentSerialNumber", Long.class);
+
+    public final StringPath userId = createString("userId");
 
     public QResident(String variable) {
         super(Resident.class, forVariable(variable));

@@ -23,3 +23,15 @@ Content-Type: application/json
   "deathPlaceCode": "어딘가",
   "deathPlaceAddress": "어딘가"
 }
+
+###
+
+POST /register/4 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "userId": "test222",
+  "pwd": "dsdasdfasdfs",
+  "email": "aoasdfasdfasdfsi@naver.com"
+}

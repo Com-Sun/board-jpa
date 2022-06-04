@@ -48,6 +48,15 @@ public class Resident {
     @Column(name = "death_place_address")
     private String deathPlaceAddress;
 
+    @Column(name = "id")
+    private String userId;
+
+    @Column(name = "pwd")
+    private String pwd;
+
+    @Column(name = "email")
+    private String email;
+
     @Builder(builderClassName = "ResidentBuilder")
     private Resident(Long residentSerialNumber, String name, String residentRegistrationNumber,
                      String genderCode, LocalDateTime birthDate, String birthPlaceCode,
