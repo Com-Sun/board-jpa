@@ -1,4 +1,6 @@
 com\nhnacademy\resident\controller\ApiControllerAdvice.class
+com\nhnacademy\resident\domain\dto\response\FamilyRelationshipResidentResponse.class
+com\nhnacademy\resident\domain\dto\response\ResidentRegisterResponse.class
 com\nhnacademy\resident\entity\Household.class
 com\nhnacademy\resident\entity\HouseholdCompositionResident$Pk.class
 com\nhnacademy\resident\domain\dto\request\ResidentRequest.class
@@ -30,6 +32,7 @@ com\nhnacademy\resident\entity\HouseholdMovementAddress.class
 com\nhnacademy\resident\service\CertificateIssueService.class
 com\nhnacademy\resident\entity\QResident.class
 com\nhnacademy\resident\service\impl\FamilyRelationshipServiceImpl.class
+com\nhnacademy\resident\domain\dto\request\ResidentLoginRequest.class
 com\nhnacademy\resident\repository\familyrelationship\FamilyRelationshipRepositoryImpl.class
 com\nhnacademy\resident\repository\RepositoryBase.class
 com\nhnacademy\resident\domain\dto\request\ResidentModifyRequest.class
@@ -43,6 +46,7 @@ com\nhnacademy\resident\config\RootConfig.class
 com\nhnacademy\resident\entity\BirthDeathReportResident$BirthDeathReportResidentBuilder.class
 com\nhnacademy\resident\entity\QFamilyRelationship.class
 com\nhnacademy\resident\entity\FamilyRelationship$FamilyRelationShipBuilder.class
+com\nhnacademy\resident\domain\dto\request\ResidentRegisterRequest.class
 com\nhnacademy\resident\domain\ApiError.class
 com\nhnacademy\resident\entity\HouseholdMovementAddress$HouseholdMovementAddressBuilder.class
 com\nhnacademy\resident\entity\QHouseholdCompositionResident.class
@@ -59,4 +63,5 @@ com\nhnacademy\resident\service\impl\ResidentServiceImpl.class
 com\nhnacademy\resident\entity\Resident.class
 com\nhnacademy\resident\repository\familyrelationship\FamilyRelationshipRepository.class
 com\nhnacademy\resident\service\FamilyRelationshipService.class
+com\nhnacademy\resident\controller\restcontroller\LoginRestController.class
 com\nhnacademy\resident\Base.class

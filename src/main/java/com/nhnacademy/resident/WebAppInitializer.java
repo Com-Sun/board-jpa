@@ -1,6 +1,8 @@
-package com.nhnacademy.resident.config;
+package com.nhnacademy.resident;
 
 
+import com.nhnacademy.resident.config.RootConfig;
+import com.nhnacademy.resident.config.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
