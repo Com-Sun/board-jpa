@@ -26,21 +26,6 @@ public class FamilyRelationshipController {
         this.residentService = residentService;
     }
 
-//    @GetMapping("residents/{serialNumber}/relationship")
-//    public ModelAndView familyRelationship(@PathVariable(name = "serialNumber") Long serialNumber) {
-//        ModelAndView mav = new ModelAndView("relationship/certification");
-//        List<FamilyRelationship> relationships =
-//            familyRelationshipService.getFamilyRelationshipList(serialNumber);
-//        mav.addObject("residents", relationships);
-//        mav.addObject("resident", residentService.getResidentBySerialNumber(serialNumber));
-//
-//        List<CertificateIssue> certifications = certificateIssueService.getCertificateListByResidentSerialNum(serialNumber);
-//        CertificateIssue certification = certificateIssueService.getFamilyRelationshipCertification(certifications, "가족관계증명서");
-//
-//        mav.addObject("certification", certification);
-//        return mav;
-//    }
-
     @GetMapping("residents/{serialNumber}/relationship")
     public ModelAndView familyRelationship(@PathVariable(name = "serialNumber") Long serialNumber) {
         ModelAndView mav = new ModelAndView("relationship/certification");

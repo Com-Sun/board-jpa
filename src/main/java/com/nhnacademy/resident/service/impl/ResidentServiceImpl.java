@@ -8,15 +8,19 @@ import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import com.nhnacademy.resident.service.ResidentService;
 import java.util.List;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ResidentServiceImpl implements ResidentService {
     private final ResidentRepository residentRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public ResidentServiceImpl(ResidentRepository residentRepository) {
+    public ResidentServiceImpl(ResidentRepository residentRepository,
+                               PasswordEncoder passwordEncoder) {
         this.residentRepository = residentRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
@@ -59,17 +63,7 @@ public class ResidentServiceImpl implements ResidentService {
 
     @Override
     public void doLogin(ResidentLoginRequest residentLoginRequest) {
-//        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority("ROLE_ADMIN");
-//        List<GrantedAuthority> authorities = new ArrayList<>();
-//        authorities.add(simpleGrantedAuthority);
-//
-//
-//        UserDetails
-//            userDetails = new SecurityUser(user.getBody().getLogin(),user.getBody().getId(),simpleGrantedAuthority.getAuthority());
-//        Authentication
-//            authentication = new UsernamePasswordAuthenticationToken(userDetails, "USER_PASSWORD", authorities);
-//        SecurityContext securityContext = SecurityContextHolder.getContext();
-//        securityContext.setAuthentication(authentication);
+
     }
 
     @Transactional
@@ -78,13 +72,14 @@ public class ResidentServiceImpl implements ResidentService {
                                                      ResidentRegisterRequest request) {
         Resident resident = residentRepository.findById(serialNum).get();
         resident.setUserId(request.getUserId());
-        resident.setPwd(request.getPwd());
+        resident.setPwd(passwordEncoder.encode(request.getPwd()));
         resident.setEmail(request.getEmail());
+
+
 
         residentRepository.save(resident);
 
         return residentRepository.getByResidentSerialNumber(serialNum);
     }
-
 
 }
