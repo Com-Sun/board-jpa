@@ -75,8 +75,6 @@ public class ResidentServiceImpl implements ResidentService {
         resident.setPwd(passwordEncoder.encode(request.getPwd()));
         resident.setEmail(request.getEmail());
 
-
-
         residentRepository.save(resident);
 
         return residentRepository.getByResidentSerialNumber(serialNum);

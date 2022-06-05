@@ -1,7 +1,6 @@
 com/nhnacademy/resident/service/impl/CertificateIssueServiceImpl.class
 com/nhnacademy/resident/service/FamilyRelationshipService.class
 com/nhnacademy/resident/controller/ApiControllerAdvice.class
-com/nhnacademy/resident/service/impl/CustomUserDetailService.class
 com/nhnacademy/resident/entity/QHouseholdMovementAddress_Pk.class
 com/nhnacademy/resident/entity/CertificateIssue.class
 com/nhnacademy/resident/config/WebConfig.class
@@ -33,6 +32,7 @@ com/nhnacademy/resident/config/JpaConfig.class
 com/nhnacademy/resident/domain/ApiError.class
 com/nhnacademy/resident/repository/familyrelationship/FamilyRelationshipRepositoryImpl.class
 com/nhnacademy/resident/entity/QHouseholdCompositionResident_Pk.class
+com/nhnacademy/resident/service/UserDetailsService.class
 com/nhnacademy/resident/Base.class
 com/nhnacademy/resident/entity/HouseholdMovementAddress$HouseholdMovementAddressBuilder.class
 com/nhnacademy/resident/entity/Resident.class
@@ -48,10 +48,13 @@ com/nhnacademy/resident/entity/QResident.class
 com/nhnacademy/resident/entity/BirthDeathReportResident$Pk.class
 com/nhnacademy/resident/entity/HouseholdMovementAddress$Pk.class
 com/nhnacademy/resident/repository/familyrelationship/FamilyRelationshipCustom.class
+com/nhnacademy/resident/domain/SecurityUser.class
 com/nhnacademy/resident/repository/HouseholdCompositionResidentRepository.class
 com/nhnacademy/resident/controller/FamilyRelationshipController.class
 com/nhnacademy/resident/domain/dto/response/ResidentRegisterResponse.class
+com/nhnacademy/resident/service/impl/CustomUserDetailsService.class
 com/nhnacademy/resident/config/RootConfig.class
+com/nhnacademy/resident/controller/LoginController.class
 com/nhnacademy/resident/domain/dto/response/FamilyRelationshipResidentResponse.class
 com/nhnacademy/resident/entity/CertificateIssue$CertificateIssueBuilder.class
 com/nhnacademy/resident/repository/HouseholdMovementAddressRepository.class
