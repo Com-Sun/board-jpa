@@ -31,7 +31,7 @@ Host: localhost:8080
 Content-Type: application/json
 
 {
-  "userId": "test222",
-  "pwd": "dsdasdfasdfs",
-  "email": "aoasdfasdfasdfsi@naver.com"
+  "userId": "admin4",
+  "pwd": "admin4",
+  "email": "superman@naver.com"
 }

@@ -20,4 +20,5 @@ public class LoginRestController {
     public ResidentRegisterResponse registerResident(@PathVariable (name = "serialNum") Long serialNum, @RequestBody ResidentRegisterRequest request) {
         return residentService.registerResident(serialNum, request);
     }
+
 }
