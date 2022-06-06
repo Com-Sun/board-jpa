@@ -6,4 +6,5 @@ import lombok.Data;
 public class FamilyRelationshipRequest {
     private Long familySerialNumber;
     private String relationShip;
+
 }

@@ -4,7 +4,7 @@ import com.nhnacademy.resident.domain.SecurityUser;
 import com.nhnacademy.resident.domain.dto.request.ResidentLoginRequest;
 import com.nhnacademy.resident.domain.dto.request.ResidentRegisterRequest;
 import com.nhnacademy.resident.domain.dto.request.ResidentRequest;
-import com.nhnacademy.resident.domain.dto.response.ResidentRegisterResponse;
+import com.nhnacademy.resident.domain.dto.response.ResidentResponse;
 import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import com.nhnacademy.resident.service.ResidentService;
@@ -33,9 +33,8 @@ public class ResidentServiceImpl implements ResidentService {
 
     @Transactional
     @Override
-    public Resident createResident(ResidentRequest residentRequest) {
-
-        return residentRepository.save(Resident.builder()
+    public ResidentResponse createResident(ResidentRequest residentRequest) {
+        residentRepository.save(Resident.builder()
             .residentSerialNumber(residentRequest.getSerialNumber())
             .name(residentRequest.getName())
             .residentRegistrationNumber(residentRequest.getRegistrationNumber())
@@ -44,6 +43,8 @@ public class ResidentServiceImpl implements ResidentService {
             .birthPlaceCode(residentRequest.getBirthPlace())
             .registrationBaseAddress(residentRequest.getBaseAddress())
             .build());
+
+        return residentRepository.getByResidentSerialNumber(residentRequest.getSerialNumber());
     }
 
     @Override
@@ -76,8 +77,8 @@ public class ResidentServiceImpl implements ResidentService {
 
     @Transactional
     @Override
-    public ResidentRegisterResponse registerResident(Long serialNum,
-                                                     ResidentRegisterRequest request) {
+    public ResidentResponse registerResident(Long serialNum,
+                                             ResidentRegisterRequest request) {
         Resident resident = residentRepository.findById(serialNum).get();
         resident.setUserId(request.getUserId());
         resident.setPwd(passwordEncoder.encode(request.getPwd()));

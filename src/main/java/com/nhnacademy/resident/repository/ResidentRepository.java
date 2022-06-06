@@ -1,6 +1,6 @@
 package com.nhnacademy.resident.repository;
 
-import com.nhnacademy.resident.domain.dto.response.ResidentRegisterResponse;
+import com.nhnacademy.resident.domain.dto.response.ResidentResponse;
 import com.nhnacademy.resident.entity.Resident;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,7 +10,7 @@ public interface ResidentRepository extends JpaRepository<Resident, Long> {
 
     Resident findByUserId(String id);
 
-    ResidentRegisterResponse getByResidentSerialNumber(Long SerialNumber);
+    ResidentResponse getByResidentSerialNumber(Long SerialNumber);
 
     Optional<Resident> findByEmail(String email);
 }

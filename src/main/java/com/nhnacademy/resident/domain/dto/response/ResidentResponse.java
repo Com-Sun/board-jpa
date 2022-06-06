@@ -3,7 +3,7 @@ package com.nhnacademy.resident.domain.dto.response;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 
-public interface ResidentRegisterResponse {
+public interface ResidentResponse {
     Long getResidentSerialNumber();
     String getName();
     String getResidentRegistrationNumber();
