@@ -2,6 +2,9 @@ package com.nhnacademy.resident.controller;
 
 
 import com.nhnacademy.resident.domain.dto.response.BirthDeathReportResidentResponse;
+import com.nhnacademy.resident.domain.dto.response.DeathReportResidentResponse;
+import com.nhnacademy.resident.domain.dto.response.ResidentResponse;
+import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.service.BirthDeathReportResidentService;
 import com.nhnacademy.resident.service.ResidentService;
 import java.util.List;
@@ -29,7 +32,12 @@ public class BirthDeathReportResidentController {
         List<BirthDeathReportResidentResponse> deathLists =
             birthDeathReportResidentService.getDeathReportResidentListBySerialNum(serialNum);
         mav.addObject("deathLists", deathLists);
+//        Resident reportResident = residentService.getResidentBySerialNumber(
+//            deathLists.get(0).getReportResidentSerialNumber());
+//        mav.addObject("reportResident", reportResident);
 
+        List<DeathReportResidentResponse> reportLists = birthDeathReportResidentService.getDeathReportResident(serialNum);
+        mav.addObject("reportResident", reportLists);
         return mav;
     }
 }
