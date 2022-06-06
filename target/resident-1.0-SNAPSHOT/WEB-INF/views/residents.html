@@ -25,6 +25,7 @@
         <td th:text="${resident.name}"></td>
         <td th:onclick="'location.href=\''+ @{|residents/${resident.residentSerialNumber}/relationship|}+ '\''" style="color: blue">가족관계증명서</td>
         <td th:text="${resident.birthDate}"></td>
+        <td th:onclick="'location.href=\''+ @{|/death/report/${resident.residentSerialNumber}|}+ '\''" style="color: tomato">사망신고서</td>
     </tr>
     </tbody>
 

@@ -1,8 +1,10 @@
 package com.nhnacademy.resident.controller;
 
 
+import com.nhnacademy.resident.domain.dto.response.BirthDeathReportResidentResponse;
 import com.nhnacademy.resident.service.BirthDeathReportResidentService;
 import com.nhnacademy.resident.service.ResidentService;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +26,9 @@ public class BirthDeathReportResidentController {
     public ModelAndView deathReport(@PathVariable(name = "serialNum") Long serialNum) {
         ModelAndView mav = new ModelAndView("report/death");
 
-
+        List<BirthDeathReportResidentResponse> deathLists =
+            birthDeathReportResidentService.getDeathReportResidentListBySerialNum(serialNum);
+        mav.addObject("deathLists", deathLists);
 
         return mav;
     }

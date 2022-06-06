@@ -12,4 +12,5 @@ public class FamilyRelationshipResidentResponse {
     private String genderCode;
     private LocalDateTime birthDate;
     private String residentRegistrationNumber;
+    private String phoneNumber;
 }
