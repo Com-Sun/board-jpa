@@ -1,5 +1,6 @@
 package com.nhnacademy.resident.service;
 
+import com.nhnacademy.resident.domain.SecurityUser;
 import com.nhnacademy.resident.domain.dto.request.ResidentLoginRequest;
 import com.nhnacademy.resident.domain.dto.request.ResidentRegisterRequest;
 import com.nhnacademy.resident.domain.dto.request.ResidentRequest;
@@ -21,4 +22,6 @@ public interface ResidentService {
     void doLogin(ResidentLoginRequest residentLoginRequest);
 
     ResidentRegisterResponse registerResident(Long serialNum, ResidentRegisterRequest request);
+
+    SecurityUser checkExistEmail(String email);
 }

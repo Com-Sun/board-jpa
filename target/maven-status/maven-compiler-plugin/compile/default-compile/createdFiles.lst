@@ -10,9 +10,11 @@ com/nhnacademy/resident/domain/dto/request/ResidentRegisterRequest.class
 com/nhnacademy/resident/entity/HouseholdCompositionResident$Pk.class
 com/nhnacademy/resident/config/SecurityConfig.class
 com/nhnacademy/resident/entity/HouseholdMovementAddress.class
+com/nhnacademy/resident/service/impl/Oauth2ServiceImpl.class
 com/nhnacademy/resident/repository/RepositoryBase.class
 com/nhnacademy/resident/entity/HouseholdCompositionResident$HouseholdCompositionResidentBuilder.class
 com/nhnacademy/resident/repository/HouseholdRepository.class
+com/nhnacademy/resident/oauth2/GithubProfile.class
 com/nhnacademy/resident/entity/QBirthDeathReportResident.class
 com/nhnacademy/resident/repository/familyrelationship/FamilyRelationshipRepository.class
 com/nhnacademy/resident/entity/QHouseholdMovementAddress.class
@@ -28,13 +30,14 @@ com/nhnacademy/resident/repository/certificateissue/CertificateIssueRepository.c
 com/nhnacademy/resident/entity/HouseholdCompositionResident.class
 com/nhnacademy/resident/repository/BirthDeathReportResidentRepository.class
 com/nhnacademy/resident/repository/ResidentRepository.class
+com/nhnacademy/resident/oauth2/OAuthToken.class
 com/nhnacademy/resident/config/JpaConfig.class
 com/nhnacademy/resident/domain/ApiError.class
 com/nhnacademy/resident/repository/familyrelationship/FamilyRelationshipRepositoryImpl.class
 com/nhnacademy/resident/entity/QHouseholdCompositionResident_Pk.class
-com/nhnacademy/resident/service/UserDetailsService.class
 com/nhnacademy/resident/Base.class
 com/nhnacademy/resident/entity/HouseholdMovementAddress$HouseholdMovementAddressBuilder.class
+com/nhnacademy/resident/service/Oauth2Service.class
 com/nhnacademy/resident/entity/Resident.class
 com/nhnacademy/resident/entity/QFamilyRelationship.class
 com/nhnacademy/resident/WebAppInitializer.class
@@ -70,4 +73,5 @@ com/nhnacademy/resident/entity/QFamilyRelationship_Pk.class
 com/nhnacademy/resident/domain/dto/request/ModifyFamilyRelationshipRequest.class
 com/nhnacademy/resident/domain/dto/request/ResidentLoginRequest.class
 com/nhnacademy/resident/entity/BirthDeathReportResident$BirthDeathReportResidentBuilder.class
+com/nhnacademy/resident/controller/Oauth2Controller.class
 com/nhnacademy/resident/entity/QHousehold.class

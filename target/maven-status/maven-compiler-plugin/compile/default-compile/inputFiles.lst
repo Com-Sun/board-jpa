@@ -9,6 +9,7 @@
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/controller/ResidentController.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/repository/ResidentRepository.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/config/JpaConfig.java
+/Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/controller/Oauth2Controller.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/target/generated-sources/java/com/nhnacademy/resident/entity/QHouseholdMovementAddress.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/entity/HouseholdCompositionResident.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/WebAppInitializer.java
@@ -26,6 +27,7 @@
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/SecurityInitializer.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/domain/dto/request/ResidentRequest.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/controller/restcontroller/FamilyRelationshipRestController.java
+/Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/oauth2/GithubProfile.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/domain/dto/request/FamilyRelationshipRequest.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/target/generated-sources/java/com/nhnacademy/resident/entity/QResident.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/service/impl/CustomUserDetailsService.java
@@ -49,14 +51,16 @@
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/entity/Resident.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/repository/familyrelationship/FamilyRelationshipCustom.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/service/FamilyRelationshipService.java
+/Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/oauth2/OAuthToken.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/service/impl/CertificateIssueServiceImpl.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/repository/HouseholdCompositionResidentRepository.java
+/Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/service/impl/Oauth2ServiceImpl.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/target/generated-sources/java/com/nhnacademy/resident/entity/QHouseholdMovementAddress_Pk.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/target/generated-sources/java/com/nhnacademy/resident/entity/QBirthDeathReportResident.java
-/Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/service/UserDetailsService.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/domain/dto/response/ResidentRegisterResponse.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/target/generated-sources/java/com/nhnacademy/resident/entity/QFamilyRelationship.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/controller/restcontroller/LoginRestController.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/entity/BirthDeathReportResident.java
+/Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/service/Oauth2Service.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/domain/dto/request/ResidentRegisterRequest.java
 /Users/johyeonjin/dev/nhn/db_app_2/평가과제/resident/src/main/java/com/nhnacademy/resident/domain/SecurityUser.java

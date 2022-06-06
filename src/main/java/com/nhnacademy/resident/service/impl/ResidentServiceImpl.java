@@ -1,5 +1,6 @@
 package com.nhnacademy.resident.service.impl;
 
+import com.nhnacademy.resident.domain.SecurityUser;
 import com.nhnacademy.resident.domain.dto.request.ResidentLoginRequest;
 import com.nhnacademy.resident.domain.dto.request.ResidentRegisterRequest;
 import com.nhnacademy.resident.domain.dto.request.ResidentRequest;
@@ -7,7 +8,14 @@ import com.nhnacademy.resident.domain.dto.response.ResidentRegisterResponse;
 import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import com.nhnacademy.resident.service.ResidentService;
+import java.util.ArrayList;
 import java.util.List;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,6 +86,26 @@ public class ResidentServiceImpl implements ResidentService {
         residentRepository.save(resident);
 
         return residentRepository.getByResidentSerialNumber(serialNum);
+    }
+
+    @Override
+    public SecurityUser checkExistEmail(String email) {
+        Resident resident = residentRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("해당 이메일을 가진 주민이 존재하지 않습니다."));
+
+        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority("ROLE_ADMIN");
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(simpleGrantedAuthority);
+
+        SecurityUser securityUser = new SecurityUser(resident.getUserId(), resident.getPwd(),
+            authorities, resident.getEmail(), resident.getResidentSerialNumber());
+
+        Authentication
+            authentication = new UsernamePasswordAuthenticationToken(securityUser, "USER_PASSWORD", authorities);
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        securityContext.setAuthentication(authentication);
+
+        return securityUser;
+
     }
 
 }

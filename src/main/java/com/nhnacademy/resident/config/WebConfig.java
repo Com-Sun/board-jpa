@@ -85,5 +85,6 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
         registry.addViewController("/private-project/**").setViewName("private-project");
         registry.addViewController("/project/**").setViewName("project");
         registry.addRedirectViewController("/redirect-index", "/");
+        registry.addViewController("/loginForm").setViewName("login");
     }
 }

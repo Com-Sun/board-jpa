@@ -6,6 +6,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.client.RestTemplate;
 
 @Controller
 @ComponentScan(basePackageClasses = Base.class,
@@ -31,5 +32,10 @@ public class RootConfig {
         dataSource.setTestWhileIdle(true);
 
         return dataSource;
+    }
+
+    @Bean
+    public RestTemplate getRestTemplate(){
+        return new RestTemplate();
     }
 }
