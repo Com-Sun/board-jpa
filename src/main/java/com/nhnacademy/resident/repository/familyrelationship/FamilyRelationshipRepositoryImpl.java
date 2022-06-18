@@ -24,11 +24,10 @@ public class FamilyRelationshipRepositoryImpl extends QuerydslRepositorySupport 
 
         List<FamilyRelationship> residentList =
             from(familyRelationship)
-            .innerJoin(resident)
-            .on(familyRelationship.pk.familyResidentSerialNumber.eq(resident.residentSerialNumber)
-                .and(familyRelationship.pk.resident.residentSerialNumber.eq(residentSerialNumber)))
-            .orderBy(familyRelationship.familyRelationshipCode.desc())
-            .fetch();
+                .innerJoin(resident)
+                .where(familyRelationship.pk.baseResidentSerialNumber.eq(residentSerialNumber))
+                .orderBy(familyRelationship.familyRelationshipCode.desc())
+                .fetch();
 
         return residentList;
     }
@@ -42,10 +41,13 @@ public class FamilyRelationshipRepositoryImpl extends QuerydslRepositorySupport 
 
         List<FamilyRelationshipResidentResponse> residentList = from(familyRelationship)
             .innerJoin(resident)
-            .on(familyRelationship.pk.familyResidentSerialNumber.eq(resident.residentSerialNumber)
-            .and(familyRelationship.pk.resident.residentSerialNumber.eq(residentSerialNumber)))
+            .where(familyRelationship.pk.baseResidentSerialNumber.eq(residentSerialNumber))
             .orderBy(familyRelationship.familyRelationshipCode.desc())
-            .select(Projections.bean(FamilyRelationshipResidentResponse.class, familyRelationship.familyRelationshipCode, resident.name, resident.birthDate, resident.residentRegistrationNumber, familyRelationship.pk.familyResidentSerialNumber, resident.birthDate, resident.residentRegistrationNumber, resident.genderCode))
+            .select(Projections.bean(FamilyRelationshipResidentResponse.class,
+                familyRelationship.familyRelationshipCode, resident.name, resident.birthDate,
+                resident.residentRegistrationNumber,
+                familyRelationship.pk.familyResidentSerialNumber, resident.birthDate,
+                resident.residentRegistrationNumber, resident.genderCode))
             .fetch();
 
         return residentList;

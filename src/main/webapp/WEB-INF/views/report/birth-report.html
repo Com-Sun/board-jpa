@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>출생신고서</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td colspan="5">출생신고서</td>
+    </tr>
+    <tr>
+        <td th:text="'발급일' + ${certificateIssue.getCertificateIssueDate()}"></td>
+    </tr>
+
+    <tr>
+        <td rowspan="3">출생자</td>
+    </tr>
+    <tr>
+        <td>성명</td>
+        <td th:text="${resident.getName()}"></td>
+        <td>성별</td>
+        <td th:text="${resident.getGenderCode()}"></td>
+    </tr>
+    <tr>
+        <td>출생일시</td>
+        <td th:text="${resident.getBirthDate()}"></td>
+    </tr>
+    <tr>
+        <td>출생장소</td>
+        <td th:text="${resident.getBirthPlaceCode()}"></td>
+    </tr>
+    <tr>
+        <td>등록기준지(본적)</td>
+        <td th:text="${resident.getRegistrationBaseAddress()}"></td>
+    </tr>
+
+    <tr th:each="family : ${families}">
+        <td th:text="${family.getFamilyRelationshipCode()}"></td>
+        <td th:text="${family.getFamilyResident().getName()}"></td>
+        <td th:text="${family.getFamilyResident().getResidentRegistrationNumber()}"></td>
+    </tr>
+
+    <tr>
+        <td>신고인</td>
+    </tr>
+    <tr>
+        <td>성명</td>
+        <td th:text="${reportResident.getName()}"></td>
+        <td>주민등록번호</td>
+        <td th:text="${reportResident.getResidentRegistrationNumber()}"></td>
+    </tr>
+    <tr>
+        <td>자격</td>
+        <td th:text="${birthReport.getBirthReportQualificationsCode()}"></td>
+    </tr>
+    <tr>
+        <td>이메일</td>
+        <td th:text="${birthReport.getEmailAddress()}"></td>
+        <td>전화번호</td>
+        <td th:text="${birthReport.getPhoneNumber()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

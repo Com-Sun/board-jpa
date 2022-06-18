@@ -4,12 +4,9 @@ import com.nhnacademy.resident.domain.SecurityUser;
 import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.repository.ResidentRepository;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -31,6 +28,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(simpleGrantedAuthority);
 
-        return new SecurityUser(resident.getUserId(), resident.getPwd(), authorities);
+        return new SecurityUser(resident.getUserId(), resident.getPwd(), authorities, resident.getEmail(),
+            resident.getResidentSerialNumber());
     }
 }

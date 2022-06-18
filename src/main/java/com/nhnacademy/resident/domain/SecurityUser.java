@@ -10,11 +10,25 @@ public class SecurityUser implements UserDetails {
     private final String password;
     private final List<GrantedAuthority> authorities;
 
+    private final String email;
+
+    private final Long residentSerialNumber;
+
     public SecurityUser(String username, String password,
-                        List<GrantedAuthority> authorities) {
+                        List<GrantedAuthority> authorities, String email, Long residentSerialNumber) {
         this.username = username;
         this.password = password;
         this.authorities = authorities;
+        this.email = email;
+        this.residentSerialNumber = residentSerialNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Long getResidentSerialNumber() {
+        return residentSerialNumber;
     }
 
     @Override

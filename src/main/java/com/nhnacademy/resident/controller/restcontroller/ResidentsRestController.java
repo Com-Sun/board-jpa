@@ -2,6 +2,7 @@ package com.nhnacademy.resident.controller.restcontroller;
 
 import com.nhnacademy.resident.domain.dto.request.ResidentModifyRequest;
 import com.nhnacademy.resident.domain.dto.request.ResidentRequest;
+import com.nhnacademy.resident.domain.dto.response.ResidentResponse;
 import com.nhnacademy.resident.entity.Resident;
 import com.nhnacademy.resident.service.ResidentService;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,7 @@ public class ResidentsRestController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = "/residents", consumes = {"application/json"})
-    public Resident createResident(@RequestBody ResidentRequest residentRequest) {
+    public ResidentResponse createResident(@RequestBody ResidentRequest residentRequest) {
         return residentService.createResident(residentRequest);
     }
 
