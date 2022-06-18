@@ -28,7 +28,7 @@ public class FamilyRelationshipServiceImpl implements FamilyRelationshipService 
     public FamilyRelationship createFamilyRelationship(
         FamilyRelationshipRequest familyRelationshipRequest, Long serialNumber) {
         return familyRelationshipRepository.save(FamilyRelationship.builder()
-            .pk(new FamilyRelationship.Pk(familyRelationshipRequest.getFamilySerialNumber(), residentRepository.findById(serialNumber).get()))
+            .pk(new FamilyRelationship.Pk(familyRelationshipRequest.getFamilySerialNumber(), serialNumber))
             .familyRelationshipCode(familyRelationshipRequest.getRelationShip())
             .build());
     }

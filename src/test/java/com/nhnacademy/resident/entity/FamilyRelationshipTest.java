@@ -30,16 +30,16 @@ class FamilyRelationshipTest {
     @PersistenceContext
     EntityManager entityManager;
 
-    @Test
-    void getResidentFromFamilyRelationShipTest() {
-        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(1L, entityManager.find(Resident.class, 2L));
-        assertThat(pk.getResident().getName()).isEqualTo("남석환");
-    }
+//    @Test
+//    void getResidentFromFamilyRelationShipTest() {
+//        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(1L, entityManager.find(Resident.class, 2L));
+//        assertThat(pk.getResident().getName()).isEqualTo("남석환");
+//    }
 
-    @Test
-    void getFamilyRelationshipCodeTest() {
-        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(1L, entityManager.find(Resident.class, 2L));
-        FamilyRelationship gildong = entityManager.find(FamilyRelationship.class, pk);
-        assertThat(gildong.getFamilyRelationshipCode()).isEqualTo("부");
-    }
+//    @Test
+//    void getFamilyRelationshipCodeTest() {
+//        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(1L, entityManager.find(Resident.class, 2L));
+//        FamilyRelationship gildong = entityManager.find(FamilyRelationship.class, pk);
+//        assertThat(gildong.getFamilyRelationshipCode()).isEqualTo("부");
+//    }
 }

@@ -7,6 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +28,11 @@ public class FamilyRelationship {
     @Column(name = "family_relationship_code")
     private String familyRelationshipCode;
 
+    @MapsId("baseResidentSerialNumber")
+    @ManyToOne
+    @JoinColumn(name = "base_resident_serial_number")
+    private Resident resident;
+
     @Builder(builderClassName = "FamilyRelationShipBuilder")
     private FamilyRelationship(Pk pk, String familyRelationshipCode) {
         this.pk = pk;
@@ -43,9 +49,8 @@ public class FamilyRelationship {
         @Column(name = "family_resident_serial_number")
         private Long familyResidentSerialNumber;
 
-        @ManyToOne
-        @JoinColumn(name = "base_resident_serial_number")
-        private Resident resident;
+        @Column(name = "base_resident_serial_number")
+        private Long baseResidentSerialNumber;
     }
 
 }

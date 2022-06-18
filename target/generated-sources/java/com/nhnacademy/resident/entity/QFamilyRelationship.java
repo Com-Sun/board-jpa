@@ -26,6 +26,8 @@ public class QFamilyRelationship extends EntityPathBase<FamilyRelationship> {
 
     public final QFamilyRelationship_Pk pk;
 
+    public final QResident resident;
+
     public QFamilyRelationship(String variable) {
         this(FamilyRelationship.class, forVariable(variable), INITS);
     }
@@ -44,7 +46,8 @@ public class QFamilyRelationship extends EntityPathBase<FamilyRelationship> {
 
     public QFamilyRelationship(Class<? extends FamilyRelationship> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.pk = inits.isInitialized("pk") ? new QFamilyRelationship_Pk(forProperty("pk"), inits.get("pk")) : null;
+        this.pk = inits.isInitialized("pk") ? new QFamilyRelationship_Pk(forProperty("pk")) : null;
+        this.resident = inits.isInitialized("resident") ? new QResident(forProperty("resident")) : null;
     }
 
 }
